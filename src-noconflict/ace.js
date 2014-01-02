@@ -3503,15 +3503,11 @@ var TextInput = function(parentNode, host) {
     var isSelectionEmpty = true;
     try { var isFocused = document.activeElement === text; } catch(e) {}
     
-	console.log(isFocused)
-	
     event.addListener(text, "blur", function() {
-	console.log("blur")
         host.onBlur();
         isFocused = false;
     });
     event.addListener(text, "focus", function() {
-	console.log("focuse")
         isFocused = true;
         host.onFocus();
         resetSelection();
